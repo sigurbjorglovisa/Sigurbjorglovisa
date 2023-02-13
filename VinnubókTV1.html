@@ -55,7 +55,7 @@ th, td {
 					<div class="title">Verkefni 1</div>
 					<div class="container">
 						<div class="row gtr-150">
-							<div class="col-8 col-12-medium">
+							<div class="col-12 col-12-medium">
 
 								<!-- Content -->
 									<div id="content">
@@ -127,7 +127,127 @@ th, td {
                                             <a href="#" class="image featured"><img src="images/rafrasir.jpg" alt="Rafrásir borðsins" /></a>
                                             
                                             <p>Þegar rafás sem þessi er prófuð í fyrsta sinn er alls ekki vitlaust að stinga henni ekki strax í rándýa tölvu. Eins og áður sagði þá getur það verið dýrkeypt. Því er notast við RaspberryPi tölvu og hún tengd við fartölvu þráðlaust. Þá er hægt að skoða hvort RaspberryPi lesi rafrásina eða ekki. En til þess að RaspberryPi lesi tölvuna þarf fyrst að forrita rafrásina. Það er gert með því að taka afrit af forriti sem var nú þegar á annarri rafrás. Þetta er allt gert í gegnum Linux-stýrikerfi. Hafliði sá um að sýna mér hvernig þetta er gert og við náðum að forrita ATtiny45 „heilann" en hins vegar kom upp óútskýrð villa sem við náðum ekki að finna út úr í tímanum en verður vonandi komið í lag fyrir næstu viku.</p>
+                                        </article>
+                                        <article>
+                                        <header class="style1">
+												<h2>Lýsing á verkefni: Fræsa okkar eigin rafrás</h2>
+											</header>
+                                             <p>Hafliði hafði hlaðið upp myndbandi þar sem farið var í hvernig ætti að smíða næstu rafrás. Hún bjó að miklu leyti til yfir sömu eiginleikum og litla ISP rásin en var þó aðeins flóknari. Nú snérist verkefnið ekki um að læra á fræsivélina og að lóða íhluti á plötuna heldur áttum við einnig að læra að teikna okkar eigin rafrás. Sem var eftirlíking þeirrar sem Hafliði sýndi okkur í myndbandinu. 
+                                            </p>
+                                            <p>Til þesss að hanna rafrás er byrjað á að hlaða niður forriti sem heitir Eagle ásamt gagnasafni sem Hafliði benti okkur á þar sem þeir íhlutir sem við kæmum til með að nota voru þægilega aðgengilegir, s.s. ekki of mikið af óþarfa íhlutum sem lengdi leitina að hinum rétta. Íhlutunum er raðað upp eins og á myndinni hér fyrir neðan, rásum til og frá þeim gefin nöfn sem vísa til þess hvernig þeir tengjast saman og hvernig þeir tengjast jörð og spennu. </p>
+                                            
+                                            <img src="images/rafras2.jpeg" alt="Rafrásir borðsins" width="1100" height="800" />
+                                            
+                                            <p>Þegar það er búið að skilgreina allar rásir saman í EAGLE er farið í að setja þetta upp í tvívídd. Það er gert með því að skipta úr Schematic View yfir í Board View. Þá birtist rásin svona upp: </p>
+                                            <img src="images/Tv%C3%ADv%C3%ADdd%20fyrir.jpeg" width ="700" height="600" />
+                                            
+                                            <p>Þá þarf að tengja saman allt sem var skilgreint smaman í Schematic View. Það getur verið púsluspil og það þarf að passa að vírarnir snertist ekki því þá er komin tengin á milli íhluta þar sem kannski á ekki að vera tenging. Við notuðum svo teikninguna hennar Brynju en yfirsást ein tenging og þurftum því að "Jumpwire-a" en það er gert með því að lóða koparvír við rásirnar þar sem á að vera tenging á milli. Svona lýtur teikningin út þgar búið er að tengja allt saman.</p>
+                                            
+                                            <img src="images/Tv%C3%ADv%C3%ADdd%20eftir.jpeg" width="900" height="700" />
+                                            
+                                            <p> Þá er þetta skjal vistað og fær yfir í INKSCAPE þar sem búið er til bæði útlínur borðsins og rásirnar sjálfar í sitthvoru skjalinu sem er svo notað til fræsingar. Eftir fræsingu er komið að því að lóða aftur. Upptalning íhluta er eftirfarandi:</p>
+                                             <div class="container">
+                                              <div class="row">
+                                                <div class="col-lg-8">
+                                                <ol class="list-holder">
+                                                <li>1x ATtiny45</li>
+                                                <li>4x viðnám</li>
+                                                <li>LED Díóða</li>
+                                                <li>4x viðnám</li>
+                                                <li>1x 2x3 pin header - CONN_03X2_AVRISMD</li>
+                                                <li>1x Þéttir</li>
+                                                <li>6x USB Serial pinnar</li>
+                                               </ol>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <p>Þegar við vorum búnar að lóða allt saman og "jumpwire-a" var komið að því að forrita rafrásina við litlu ISPtiny rafrásina. Það var gert með 6 víra kapli með lengdina "Brynja Surfer DUDE" sem tengdist við pin-headera rafrásanna. Þeir voru svo tengdir með USB-tengingu í tölvuturn og forritaðir saman í CommandWindow. Þegar búið var að "virkja" rafrásina okkar með tengingunni var hægt að senda live-forritunarkipani í gegnum USB Serial. Brynja bjó til lítið diskó í gegnum Arduino software.</p>
+                                            
+                                            <img src="images/IMG_5260.jpeg" width="900" height="700">
+                                    
+                                           
 
+                                        </article>
+                                        <article>
+                                        <header class= "style1">
+                                            <h2>3.Hluti - Örtölvustýring</h2>
+                                            </header>
+                                            <div class="container">
+                                            <p>Hanna á örtölvu með tilliti til valins inntaks og úttaksbúnaðar.</p>
+                                              <p>Íhlutirnar sem eru notaðir eru eftirfarandi: </p>
+                                            <div class="container">
+                                              <div class="row">
+                                                <div class="col-lg-8">
+                                                <ol class="list-holder">
+                                                <li>1x Arduino Uno</li>
+                                                <li>2x 1kΩ viðnám</li>
+                                                <li>HC-SR04 fjarlægðarnemi</li>
+                                                <li>RGBW LED ljósaborði</li>
+                                                <li>Brauðbretti</li>
+                                                <li>YXDZ Piezo Buzzer</li>
+                                                <li>LCD Skjár</li>
+                                                <li>Male->Female tengivírar</li>
+                                                    <li>Male->Male tengivírar</li></ol>
+                                                    </div>
+                                                <div class="col-lg-4">
+                                                  <div class="image-holder">
+                                                    <img src="images/%C3%ADhlutir%20arduino.jpeg" alt="Íhlutir" width="500" height="450" />
+                                                  </div>
+                                                </div>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                            
+                                             <p>Til að tengja rásir íhluta saman notuðum við vefsíðuna <a href="https://www.circuito.io/app?components=512,11021,13959,417986,956215,964450">Circuito.io</a> til að sjá hvernig væri best að tengja allt saman. Vefsíðan gefur einnig upp hvernig á að virkja alla íhluti í kóðanum. Við vorum því mjög fljótt komnar með þægilegar upplýsingar til að hefja verkefnið. Hinsvegar gerðum við mistök þegar við vorum inni í Arduionu Software en hann þarf að vera stilttur á Arduino Uno en ekki á ATtiny45 eins og hann var í fyrra verkefni. Út frá gefnum íhlutum þá leit tengingin okkar svona út:</p>
+                                            
+                                            <img src="images/Arduinouppset.jpeg" width="892" height="533">
+                                            
+                                            <p> Hér er svo kóðinn okkar ásamt virkni tölvunnar með kóðanum.</p>
+                                            <pre><code>
+                                            //https://www.youtube.com/watch? v=qIHbL_xOWgY
+//Grunnkóðinn tekinn úr þessu myndbandi og síðan aðlagað að okkar verkefni
+const int trigPin = 10;
+const int echoPin = 9;
+const int buzzer = 8; #include&lt;LiquidCrystal_I2C.h&gt; #include &lt;FastLED.h&gt; LiquidCrystal_I2C lcd(0x27,20,4);
+float duration, distance; #define LED_PIN 5
+#define NUM_LEDS 7
+CRGB leds[NUM_LEDS];
+void setup() { FastLED.addLeds&lt;WS2812B,
+LED_PIN>(leds, NUM_LEDS);
+ FastLED.setBrightness(15);
+  lcd.init();
+ lcd.backlight();
+pinMode(buzzer, OUTPUT); pinMode(trigPin, OUTPUT); pinMode(echoPin, INPUT);
+ Serial.begin(9600);
+}
+void loop() { digitalWrite(trigPin, LOW);
+delayMicroseconds(2); digitalWrite(trigPin, HIGH);
+delayMicroseconds(10); digitalWrite(trigPin, LOW);
+duration = pulseIn(echoPin, HIGH);
+distance = (duration*.0343)/2; Serial.print("Distance: ");
+Serial.print(distance); Serial.println(" cm ");
+ lcd.setCursor(0,0);
+ lcd.print("Distance:");
+lcd.print(distance); lcd.print("cm "); delay(100);
+
+if(distance&lt;=10){
+   digitalWrite(buzzer,HIGH);
+#for (int i = 0; i &lt;= NUM_LEDS; i++) { leds[i] = CRGB ( 0, 0, 255); 
+     FastLED.show();
+  }
+    delay(50);
+  }else{
+   digitalWrite(buzzer,LOW);
+   FastLED.clear(true);
+} }
+                                                </code>
+                                                </pre>
+                                            
+                                            <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
+                                            <source src="Myndband.mp4" type="video/mp4" width="800" height="400">
+                                            </source>
+                                            </video>
+                                        
                                         </article>
                                 </div>
                             </div>
