@@ -1,0 +1,255 @@
+<!DOCTYPE HTML>
+<!--
+	Escape Velocity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Sigubjörg Lovísa - VÉl608G - Tölvustudd Framleiðsla</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="icon" type="image/x-icon" href="/images/favicon.jpg" />
+	</head>
+    
+<style>
+    table, th, td {
+  border-bottom:1px solid red;
+        box-shadow: 0 1px 0 red;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+}
+
+</style>
+    
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<section id="header" class="wrapper">
+
+					<!-- Logo -->
+						<div id="logo">
+					 		<h1><a href="index.html" style="70%" >VÉL608G - Tölvustudd framleiðsla</a> </h1>
+							<p style="color:black">Vefsíða og vinnubók í áfanganum Tölvustudd framleiðsla</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav" >
+							<ul>
+								<li class="current"><a href="index.html">Forsíða</a></li>
+								<li>
+									<a href="#">Vinnubækur</a>
+									<ul>
+										<li><a href="Verkefni%201.html">Verkefni 1</a></li>
+                                        <li><a href="Verkefni2.html">Verkefni 2</a></li>
+                                        <li><a href="Verkefni3.html">Verkefni 3</a></li>
+									</ul>
+								</li>
+                                <li>
+									<a href="#">Tölvustýrður vélbúnaður</a>
+									<ul>
+										<li><a href="Vinnub%C3%B3kTV1.html">Verkefni 1</a></li>
+									</ul>
+								</li>
+                                <li><a href="ordabok.html">Orðabók</a></li>
+							</ul>
+						</nav>
+
+				</section>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style2">
+					<div class="title">Súpuróbot</div>
+					<div class="container">
+
+						<!-- Content -->
+							<div id="content">
+								<article class="box post">
+									<header class="style1">
+										<h2>Hugmynd hönnunar<br class="mobile-hide" />
+										</h2>
+										
+									</header>
+								
+<p>Súburóbotinn byggir á tveimur vélstýrðum einingum. Upphækkun skeiðararms og mötunarskeiðin sjálf. Fyrri hugmyndir um upphækkanlegan pall þar sem skálin hvíldi á þótti ekki jafn ákjósanleg, bæði vegna þess að skálin er þung og mótorar sem í boði eru með takmarkaði burðarþolsgetu en svo vildum við einnig hanna vélmenni sem auðvelt fararsnið er. Það er ekki síður partur af hönnun hjálpartækja hreyfihamlaðra að þau séu auðveld og aðgengileg, þægileg í ferðalög, því jöfnuður skal ríkja og aðrar forsendur en grunnþarfir mannslíkamans skulu líka hafðar að leiðarljósi. </p>
+                                    
+<header class="style1">
+    <h2>Úreikningar<br class="mobile-hide" />
+    </h2>
+    </header>
+<p>Mótorinn sem lyftir arminum upp þar að lyfta 140g Stepperm mótor, 9g Servo mótor, 10g armi, 6g skeiðahaldara, 8g skeið, 8 g Stepper undirstaða en samanlagt er þetta um 181g. Við nálguðum þó upp í 200 g til þess að vera örugg um burðarþol kerfis. Til einföldunar á reikningum gerðum við einnig ráð fyrir að þetta sé punktmasssi að lyftastt u.þ.b 20cm á ca 3sek.</p>
+                                    
+                                    <li>m = 0,2 kg</li>
+                                    <li>g = 9,81 m/s^2</li>
+                                    <li>h = 0,2 m</li>
+                                    <li>t = 5s</li>
+                                    
+                                    <p>Stöðuorkubreyting: U = mgh = 0,2kg*9,81m/s^2*0,2m = 0,3924J</p>
+                                    
+                                    <p>Til að byrja með reiknuðum við 100% nýtni kerfisins til þess að sjá algjört hámark vélrænna forsenda. Til þess þó að vera raunhæf reiknuðum við íka 70% nýtni kerfis. Niðurstaðan var ánæegjuleg vegna þess að við sáum að straumþörf miðað við báðar nýtniaðstæður dugðu fyrir Arduino og Nema 17 mótor. Sem þýddi að kerfið myndi standa undir sjálfu sér.</p>
+
+                                    <table><tr><th>100% nýtni</th><th>70% nýtni</th></tr>
+                                    <tr><td>0,3924J/3s = 0,131W</td><td>0,3924J/(3s*0,7) = 0,187W</td></tr>
+                                    <tr><td>0,131W/12V = 0,011A</td><td>0,187W/12V = 0,016A</td></tr></table>
+                                    
+                                    <header class="style1">
+    <h2>MEKATRÓNÍK hönnunar<br class="mobile-hide" />
+    </h2>
+    </header>
+<p>Vélrænir mótorar eru þrír. Tveir stepper mótorar sem stjórna hækkun skeiðararmsins og snúning skeiðar frá súpuskál og að munni notanda. Svo er einn Micro Servo 9g motor með hálfhringsssnúing sem færir skeiðina sjálfa ofan í súpuna og aftur upp úr skálinni. Hér á eftir er listi yfir alla þá íhluti sem við notuðum.</p>
+
+<li>Nema 17 Stepper mótor</li>
+<li>Nema 14 Stepper mótor</li>
+<li>Micro Servo 9g mótor</li>
+<li>Tengivírar</li>
+<li>DRV8833 driver</li>
+<li>A4988 driver</li>
+<li>12V AC adapter</li>
+<li>Capicator</li>
+<li>DS18b20 Hitanema</li>
+<li>Ljósnema</li>
+                                    
+
+ 
+<h2>En hvernig virkar þetta allt saman?<br class="mobile-hide" />
+    </h2>
+                                                   
+<p>Nema 17 mótorinn er notaður til að færa arminn sjálfann upp og niður. Með 200 skrefa snúning. Aflið sem mótorinn þarf er 12V og þess vegna fengum við AC adapter sem veitti nægilegt afl inn á Arduino örtölvustýringuna. Vegna þess hve mótorinn er aflkræfur nær hann að halda vægi (e. Holding torque) upp að allt að 3,2 kg*cm sem er miklu meira en nóg. Allir íhlutir eru tengdir við eitt brauðborð. En á því hvíla hinsvegar tveir driver-ar. A4988 annars vegar og DRV8833 hinsvegar. <img src=/images/stepper_1_og_2_test.JPEG align="right"/ width="300" height="250"/> fyrrnefndi drífur áfram Nema 17 mótorinn og svo það sé sagt reyndist það þrautinni þyngri að finna driver sem virkaði sem skildi með mótornum, en að lokum komumst við að því að með því að veita 12V AC adapter inn á kerfið til að drífa þetta áfram virkaði driverinn, en aðrir áður prófaðir höfðu ekki virkað sem skyldi. Sá síðarnefndi var svo notaður til að drífa áfram arminnn sjálfann og var hannn tengdur inn á 5V í Arduino og virkaði strax. Til þess að þetta virki þó eins og það á að vera var eftirfarandi kóði notaður. 
+</p> 
+                                    
+<img src="/images/ljosnemi.jpeg"/> 
+<img src="/images/hitanemi.jpeg"/>
+                                    
+<p>Eins og sjá má er kóðanum skipt upp, áður en hann fer í heildar vélstýringuna. Okkur fannst mikilvægt að skilja hvernig vélstýring hvers hlutafyrir sig virkaði áður en við gengum lengra. Þannig er auðveldara að breyta ef okkur finnst eitthvað ábótavant þegar líður á ferilið.</p>
+ 
+<header class="style1">
+    <h2>Framleiðsla<br class="mobile-hide" />
+    </h2>
+    </header>
+                                    
+<p>Allar einingar prótótýpunnar eru prentaðar í Prusa prentaranum annars vegar eða laserskornar í krossvið í Fablab Háskóla Íslands. Þá er um að ræða skeiðina sjálfa, en hún er prentuð úr plasti sem er notað í kringum matvæli, annað er úr hinu venjulega prentefni Prusa prentarans. Fari vélmennið í hönnun mun skeiðin smíðuð úr sambærilegu stáli og önnur hnífapör. Út frá þeim forsendum að styðjast ekki aðeins við grunnþörf mannsins til að næra sig skal skeiðin vera útskiptanleg svo hægt sé að fá sér súpu oftar en einu sinni á dag án þess að þurfa alltaf að standa í að þvo einu skeið heimilisins. Á Micro Servo motor er áfastur biti þar sem hægt er að festa skeiðina inn. Auk þess prentuðum við hvítan beinann arm sem Servo motorinn smellist ofan í og tengir þannig Servo motorinn og Nano 14 Stepper mótorinn saman. Þ.a.l. Þrjár frelsisgráður að huga að í þessari einingu vélmennisins. Þegar kom að því að prenta krafðist hönnunin þess að við sköluðum skeiðina upp um 0,5%,  til að hún héldist föst á sínum stað innann í skeiðahaldaranum sem við sköluðum um 3%. Aðrir útrprentaðir hlutir gerðu ráð fyrir skekkju með því að stækka öll göt um 0.25-0.3mm. Þetta heppnaðist þó ekki allt í fyrstu, og til þess að einfalda okkur verkið gerðum við próf á skeiðahaldaranum, til að sjá hvorrt hann passaði við Servo Motorinn, en við geymdum það að prenta skeiðina þar til í lok verkenfis, en þá höfðum við gert nokkur próf á skaftinu sjálfu og hvernig það passaði inn í hólkinn. 5 próf voru gerð þar til við vorum sátt. Auk þess framleiddum við tvær skeiðar, þar sem mælingar á þeirri fyrri höfðu ekki verið nægilega góðar og þykktin var of lítil. </p>
+                                    
+ <header class="style1">
+    <h2>Loka afrakstur verkefnis<br class="mobile-hide" />
+    </h2>
+    </header>
+               
+                                    
+                                    
+<video width="720" height="" controls>
+  <source src="/images/Supurobot_upptaka-2.mp4" type="video/mp4">
+</video>
+                                    
+                                     <header class="style1">
+    <h2>En hvað svo?<br class="mobile-hide" />
+    </h2>
+    </header>
+                                    
+                                    <p>Það er að mörgu að huga þegar hanna á nýjan hlut, og oft er það svo að þegar fólk sem er ekki hreyfihamlað gerir sér eki grein fyrir öllum þeim hindrunum sem á vegi fatlaðs fólks er. Eins og samfélagið er í dag gerum við sífelt meiri kröfu um að notandi vöru komi að hönnun hennar. Þess vegna væri næsta skref að fá til liðs við okkur fatlaðan einstakling og skoða það út frá sjónarhorni hans. Okkur dettur einnig í hug að hugsanlega væri hægt að bæta við kerfið takka sem gerir notanda þá betur kleift að stjórna tímanum sem heill keyrsluhringu kerfis er, hvenær má halla skeiðinni upp að munni og svo framvegis.</p>
+             
+
+			<!-- Footer -->
+				<section id="footer" class="wrapper">
+					<div class="title">Hafa samband</div>
+					<div class="container">
+						<header class="style1">
+							<h2>Ertu með einhverjar spurningar?</h2>
+							<p>
+								Viljir þú vita meira um mig eða mín verkefni þá máttu endilega hafa samband. 
+							</p>
+						</header>
+						<div class="row">
+							<div class="col-6 col-12-medium">
+
+								<!-- Contact Form -->
+									<section>
+										<form method="post" action="#">
+											<div class="row gtr-50">
+												<div class="col-6 col-12-small">
+													<input type="text" name="name" id="contact-name" placeholder="Nafn" />
+												</div>
+												<div class="col-6 col-12-small">
+													<input type="text" name="email" id="contact-email" placeholder="Netfang" />
+												</div>
+												<div class="col-12">
+													<textarea name="message" id="contact-message" placeholder="Skilaboð" rows="4"></textarea>
+												</div>
+												<div class="col-12">
+													<ul class="actions">
+														<li><input type="submit" class="style1" value="Senda" /></li>
+														<li><input type="reset" class="style2" value="Reset" /></li>
+													</ul>
+												</div>
+											</div>
+										</form>
+									</section>
+
+							</div>
+							<div class="col-6 col-12-medium">
+
+								<!-- Contact -->
+									<section class="feature-list small">
+										<div class="row">
+											<div class="col-6 col-12-small">
+												<section>
+													<h3 class="icon solid fa-home">Heimilisfang</h3>
+													<p>
+														Brautarholt 7-9<br />
+														Íbúð xxx<br />
+														105 Reykjavík
+													</p>
+												</section>
+											</div>
+											<div class="col-6 col-12-small">
+												<section>
+													<h3 class="icon solid fa-comment">Samfélagsmiðlar</h3>
+													<p>
+														<a href="https://www.instagram.com/sigurbjorglovisa/">Instagram</a><br />
+														<a href="http://www.facebook.com/sigurbjorglovisa/">Facebook</a>
+													</p>
+												</section>
+											</div>
+											<div class="col-6 col-12-small">
+												<section>
+													<h3 class="icon solid fa-envelope">Netfang</h3>
+													<p>
+														<a href="mailto:sla19@hi.is">Hafa samband</a>
+													</p>
+												</section>
+											</div>
+											<div class="col-6 col-12-small">
+												<section>
+													<h3 class="icon solid fa-phone">Sími</h3>
+													<p>
+														(+354) 7714282
+													</p>
+												</section>
+											</div>
+										</div>
+									</section>
+
+							</div>
+						</div>
+						<div id="copyright">
+							<ul>
+								<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+	
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
