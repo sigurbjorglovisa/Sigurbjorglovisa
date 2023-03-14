@@ -118,11 +118,52 @@ th, td {
 <h2>En hvernig virkar þetta allt saman?<br class="mobile-hide" />
     </h2>
                                                    
-<p>Nema 17 mótorinn er notaður til að færa arminn sjálfann upp og niður. Með 200 skrefa snúning. Aflið sem mótorinn þarf er 12V og þess vegna fengum við AC adapter sem veitti nægilegt afl inn á Arduino örtölvustýringuna. Vegna þess hve mótorinn er aflkræfur nær hann að halda vægi (e. Holding torque) upp að allt að 3,2 kg*cm sem er miklu meira en nóg. Allir íhlutir eru tengdir við eitt brauðborð. En á því hvíla hinsvegar tveir driver-ar. A4988 annars vegar og DRV8833 hinsvegar. <img src=/images/stepper_1_og_2_test.JPEG align="right"/ width="300" height="250"/> fyrrnefndi drífur áfram Nema 17 mótorinn og svo það sé sagt reyndist það þrautinni þyngri að finna driver sem virkaði sem skildi með mótornum, en að lokum komumst við að því að með því að veita 12V AC adapter inn á kerfið til að drífa þetta áfram virkaði driverinn, en aðrir áður prófaðir höfðu ekki virkað sem skyldi. Sá síðarnefndi var svo notaður til að drífa áfram arminnn sjálfann og var hannn tengdur inn á 5V í Arduino og virkaði strax. Til þess að þetta virki þó eins og það á að vera var eftirfarandi kóði notaður. 
+<p>Nema 17 mótorinn er notaður til að færa arminn sjálfann upp og niður. Með 200 skrefa snúning. Aflið sem mótorinn þarf er 12V og þess vegna fengum við AC adapter sem veitti nægilegt afl inn á Arduino örtölvustýringuna. Vegna þess hve mótorinn er aflkræfur nær hann að halda vægi (e. Holding torque)  <img src="images/stepper_1_og_2_test%202.jpeg" align="right"/ width="300" height="250"/>upp að allt að 3,2 kg*cm sem er miklu meira en nóg. Allir íhlutir eru tengdir við eitt brauðborð. En á því hvíla hinsvegar tveir driver-ar. A4988 annars vegar og DRV8833 hinsvegar. fyrrnefndi drífur áfram Nema 17 mótorinn og svo það sé sagt reyndist það þrautinni þyngri að finna driver sem virkaði sem skildi með mótornum, en að lokum komumst við að því að með því að veita 12V AC adapter inn á kerfið til að drífa þetta áfram virkaði driverinn, en aðrir áður prófaðir höfðu ekki virkað sem skyldi. Sá síðarnefndi var svo notaður til að drífa áfram arminnn sjálfann og var hannn tengdur inn á 5V í Arduino og virkaði strax. Til þess að þetta virki þó eins og það á að vera var eftirfarandi kóði notaður. 
 </p> 
                                     
-<img src="/images/ljosnemi.jpeg"/> 
-<img src="/images/hitanemi.jpeg"/>
+<img src="images/ljosnemi.jpeg" width="800"> 
+<img src="images/hitanemi.jpeg" width="800">
+                                    <p>Hér eru semsagt kóðar fyrir aflestur um upplýsingar súpunnar, hvað hún er heit og hvers kyns súpa það er. Hitamælir mælir hitan, eðlilega, ljósnemin mælir birtu frá súpunni og metur gerð súpu eftir því.</p>
+                                    
+                                    <div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 4</div>
+    <img src="images/supukodi1.jpeg" style="width:100%">
+    <div class="text">Uppsetning kóða og fyrstu skilaboð kerfis</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 4</div>
+    <img src="images/supukodi2.jpeg" style="width:100%">
+    <div class="text">Mat á súpu, hitastig og byrjun mötunarferlis</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 4</div>
+    <img src="images/supukodi3.jpeg" style="width:100%">
+    <div class="text">Mötun, stepper1 og stepper2 tala saman</div>
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 4</div>
+    <img src="images/supukodi4.jpeg" style="width:100%">
+    <div class="text">Viltu meira?</div>
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
                                     
 <p>Eins og sjá má er kóðanum skipt upp, áður en hann fer í heildar vélstýringuna. Okkur fannst mikilvægt að skilja hvernig vélstýring hvers hlutafyrir sig virkaði áður en við gengum lengra. Þannig er auðveldara að breyta ef okkur finnst eitthvað ábótavant þegar líður á ferilið.</p>
  
@@ -133,15 +174,49 @@ th, td {
                                     
 <p>Allar einingar prótótýpunnar eru prentaðar í Prusa prentaranum annars vegar eða laserskornar í krossvið í Fablab Háskóla Íslands. Þá er um að ræða skeiðina sjálfa, en hún er prentuð úr plasti sem er notað í kringum matvæli, annað er úr hinu venjulega prentefni Prusa prentarans. Fari vélmennið í hönnun mun skeiðin smíðuð úr sambærilegu stáli og önnur hnífapör. Út frá þeim forsendum að styðjast ekki aðeins við grunnþörf mannsins til að næra sig skal skeiðin vera útskiptanleg svo hægt sé að fá sér súpu oftar en einu sinni á dag án þess að þurfa alltaf að standa í að þvo einu skeið heimilisins. Á Micro Servo motor er áfastur biti þar sem hægt er að festa skeiðina inn. Auk þess prentuðum við hvítan beinann arm sem Servo motorinn smellist ofan í og tengir þannig Servo motorinn og Nano 14 Stepper mótorinn saman. Þ.a.l. Þrjár frelsisgráður að huga að í þessari einingu vélmennisins. Þegar kom að því að prenta krafðist hönnunin þess að við sköluðum skeiðina upp um 0,5%,  til að hún héldist föst á sínum stað innann í skeiðahaldaranum sem við sköluðum um 3%. Aðrir útrprentaðir hlutir gerðu ráð fyrir skekkju með því að stækka öll göt um 0.25-0.3mm. Þetta heppnaðist þó ekki allt í fyrstu, og til þess að einfalda okkur verkið gerðum við próf á skeiðahaldaranum, til að sjá hvorrt hann passaði við Servo Motorinn, en við geymdum það að prenta skeiðina þar til í lok verkenfis, en þá höfðum við gert nokkur próf á skaftinu sjálfu og hvernig það passaði inn í hólkinn. 5 próf voru gerð þar til við vorum sátt. Auk þess framleiddum við tvær skeiðar, þar sem mælingar á þeirri fyrri höfðu ekki verið nægilega góðar og þykktin var of lítil. </p>
                                     
+                                    <section id="features">
+                                <div class="container">
+                                    <div class="row aln-center">
+                                        <div class="col-2 col-12-medium">
+                                            <section class="highlight">
+                                                <a href="#" class="image featured"><img src="images/skeidatest2.jpeg"/></a>
+                                            </section>
+                                        </div>
+                                        <div class="col-2 col-12-medium">
+                                            <section class="highlight">
+                                                <a href="#" class="image featured"><img src="images/Skeidatest%202.jpeg" /></a>
+                                            </section>
+                                        </div>
+                                        <div class="col-2 col-12-medium">
+                                            <section class="highlight">
+                                                <a href="#" class="image featured"><img src="images/armur_prentun.jpeg" /></a>
+                                            </section>
+                                        </div>
+                                        <div class="col-2 col-12-medium">
+                                            <section class="highlight">
+                                                <a href="#" class="image featured"><img src="images/Servo_stepper_test%202.jpeg" /></a>
+                                            </section>
+                                        </div>
+                                        <div class="col-2 col-12-medium">
+                                            <section class="highlight">
+                                                <a href="#" class="image featured"><img src="images/skeid_vol2.jpeg" /></a>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                                </section>
+                                    
  <header class="style1">
     <h2>Loka afrakstur verkefnis<br class="mobile-hide" />
     </h2>
     </header>
+                                    
+            <p>Hér fyrir neðan er afrakstur verkefnis.</p>
                
                                     
                                     
 <video width="720" height="" controls>
-  <source src="/images/Supurobot_upptaka-2.mp4" type="video/mp4">
+  <source src="images/Supurobot_upptaka-2.mp4" type="video/mp4" align="center">
 </video>
                                     
                                      <header class="style1">
@@ -151,6 +226,14 @@ th, td {
                                     
                                     <p>Það er að mörgu að huga þegar hanna á nýjan hlut, og oft er það svo að þegar fólk sem er ekki hreyfihamlað gerir sér eki grein fyrir öllum þeim hindrunum sem á vegi fatlaðs fólks er. Eins og samfélagið er í dag gerum við sífelt meiri kröfu um að notandi vöru komi að hönnun hennar. Þess vegna væri næsta skref að fá til liðs við okkur fatlaðan einstakling og skoða það út frá sjónarhorni hans. Okkur dettur einnig í hug að hugsanlega væri hægt að bæta við kerfið takka sem gerir notanda þá betur kleift að stjórna tímanum sem heill keyrsluhringu kerfis er, hvenær má halla skeiðinni upp að munni og svo framvegis.</p>
              
+
+								</article>
+							</div>
+
+					</div>
+				</div>
+
+			
 
 			<!-- Footer -->
 				<section id="footer" class="wrapper">
@@ -250,6 +333,6 @@ th, td {
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+        </div>
 	</body>
 </html>
